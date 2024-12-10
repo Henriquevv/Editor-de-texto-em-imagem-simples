@@ -403,6 +403,8 @@ class ImageGeneratorApp:
 
     def editar_imagem(self, opcao, subgrupo, credito, entrada, parcelas, observacoes):
         try:
+            if not os.path.exists('Imagens'):
+                os.makedirs('Imagens')
             data_hora_atual = datetime.now().strftime("%Y-%m-%d_%H-%M-%S")
             # Escolhe a imagem com base na subopção
             if opcao == "Imóvel":
